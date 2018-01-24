@@ -12,10 +12,10 @@ def bot_login():
 def run_bot(r):
 
     for comment in r.subreddit('all').comments(limit=500):
-        if (comment.body in (["Nice", "nice", "Nice", "Nice."])  and comment.id not in comments_replied
+        if (comment.body in (["word"])  and comment.id not in comments_replied
         and not comment.author == r.user.me()):
             print("string found")
-            comment.reply("Nice")
+            comment.reply("Reply")
 
             comments_replied.append(comment.id)
     print("sleeping")
